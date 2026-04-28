@@ -12,6 +12,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.1.9"
+    "@tailwindcss/postcss": "^4.2.4",
+    "@tailwindcss/vite": "^4.2.4",
+    "astro": "^6.1.9",
+    "tailwindcss": "^4.2.4",
+    "vite-tsconfig-paths": "^6.1.1"
+  },
+  "overrides": {
+    "vite": "^7.3.2"
   }
 }

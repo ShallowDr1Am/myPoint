@@ -1,0 +1,43 @@
+---
+import "../styles/global.css";
+
+const pageTitle = "关于我";
+
+const happy = true;
+const finished = false;
+const goal = 3;
+---
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="bg-slate-50 text-slate-900">
+    <main class="mx-auto flex min-h-screen w-full max-w-4xl flex-col px-6 py-10 sm:px-8">
+      <nav class="mb-8 flex flex-wrap gap-3 text-sm font-medium">
+        <a class="rounded-full border border-slate-200 bg-white px-4 py-2 text-slate-700 transition hover:border-cyan-300 hover:text-cyan-700" href="/">首页</a>
+        <a class="rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-cyan-700" href="/about/">关于</a>
+      </nav>
+
+      <section class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.4)] sm:p-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-700">About</p>
+        <h1 class="mt-3 text-4xl font-black tracking-tight text-slate-950">{pageTitle}</h1>
+        <h2 class="mt-4 text-lg font-medium text-slate-600">……和我的新 Astro 网站！</h2>
+
+        <div class="mt-8 space-y-4 text-base leading-8 text-slate-700">
+          <p>我正在学习 Astro 的入门教程。这是我网站上的第二个页面，也是我自己建立的第一批页面之一。</p>
+          <p>随着我完成更多教程，这个站点会持续更新，我也会把学习过程里的内容慢慢沉淀成笔记。</p>
+          {happy && <p class="font-medium text-emerald-700">我非常乐意学习 Astro！</p>}
+          {finished && <p>我完成了这节教程！</p>}
+          {goal === 3 ? (
+            <p class="rounded-2xl border border-cyan-200 bg-cyan-50 px-4 py-3 text-cyan-800">我的目标是在三天内完成。</p>
+          ) : (
+            <p>我的目标不是 3 天。</p>
+          )}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
