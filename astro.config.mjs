@@ -12,4 +12,7 @@ export default defineConfig({
       theme: 'github-dark',
     },
   },
+  assets: {
+    inlineStyle: false,
+  },
 });
