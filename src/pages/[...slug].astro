@@ -12,7 +12,10 @@ export async function getStaticPaths() {
 
 const { note } = Astro.props;
 const { Content } = await render(note);
-const title = note.data.title || note.id.replace('.md', '');
+
+// 从 Markdown 原文中提取第一个 H1 标题
+const h1Match = note.body?.match(/^#\s+(.+)$/m);
+const title = note.data.title || h1Match?.[1] || note.id.replace('.md', '');
 ---
 <NotesLayout title={title}>
   <Content />

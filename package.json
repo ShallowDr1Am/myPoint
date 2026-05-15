@@ -6,19 +6,22 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "preprocess": "node scripts/preprocess-notes.js",
+    "dev": "npm run preprocess && astro dev",
+    "build": "npm run preprocess && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.2.4",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.4",
     "astro": "^6.1.9",
     "tailwindcss": "^4.2.4",
+    "unist-util-visit": "^5.1.0",
     "vite-tsconfig-paths": "^6.1.1"
   },
   "overrides": {
-        "vite": "^7.3.2"
+    "vite": "^7.3.2"
   }
 }
